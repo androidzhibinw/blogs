@@ -32,3 +32,22 @@ structs that are semantically similar to those of the underlying OpenGL ES API.
 
 ### OpenCL (Open Computing Language)
 >OpenCL is an open, royalty-free standard for cross-platform, general-purpose parallel programming of processors found in personal computers, servers, and mobile devices, including GPUs. OpenCL deﬁnes interop methods to share OpenCL memory and image objects with corresponding OpenGL buffer and texture objects, and to coordinate control of and transfer of data between OpenCL and OpenGL. This allows applications to split processing of data between OpenCL and OpenGL; for example, by using OpenCL to implement a physics model and then rendering and interacting with the resulting dynamic geometry using OpenGL.
+
+
+# OpenGL Fundamentals 
+
+### Execution Model 
+> OpenGL is concerned only with processing data in GPU memory, including rendering into a framebuffer and reading values stored in that framebuffer.
+
+> The GL draws primitives processed by a variety of shader programs and ﬁxed function processing units controlled by context state. Each primitive is a point,line segment, patch, pixel rectangle, or polygon. Context state may be changed independently; the setting of one piece of state does not affect the settings of others.
+
+> Primitives are deﬁned by a group of one or more vertices. A vertex deﬁnes a point, an endpoint of a line segment, or a corner of a polygon where two edges meet. Data such as positional coordinates, colors, normals, texture coordinates, etc. are associated with a vertex and each vertex is processed independently, in order, and in the same way. 
+
+> Commands are always processed in the order in which they are received, although there may be an indeterminate delay before the effects of a command are realized. This means, for example, that one primitive must be drawn completely before any subsequent one can affect the framebuffer. 
+
+> Data binding occurs on call. This means that data passed to a GL command are interpreted when that command is received.  
+
+> The GL provides direct control over the fundamental operations of 3D and 2D graphics. This includes speciﬁcation of parameters of application-deﬁned shader programs performing transformation, lighting, texturing, and shading operations, as well as built-in functionality such as antialiasing and texture ﬁltering. It does not provide a means for describing or modeling complex geometric objects, although shaders can be written to generate such objects.
+
+> The model for interpretation of GL commands is client-server. That is, a program (the client) issues commands, and these commands are interpreted and processed by the GL (the server). The server may or may not operate on the same computer or in the same address space as the client. In this sense, the GL is network transparent. A server may maintain a number of GL contexts, each of which is an encapsulation of current GL state and objects. A client may choose to be made current to any one of these contexts.
+
