@@ -72,3 +72,21 @@ structs that are semantically similar to those of the underlying OpenGL ES API.
 | us | ushort|
 | ui | uint|
 | ui64 | uint64|
+
+###　Command Execution
+
+>Most of the Speciﬁcation discusses the behavior of a single context bound to a single CPU thread. It is also possible for multiple contexts to share GL objects and for each such context to be bound to a different thread. 
+
+>The GL detects only a subset of those conditions that could be considered errors.This is because in many cases error checking would adversely impact the performance of an error-free program.
+
+enum GetError( void );
+ 
+#### Flush and Finish
+
+Implementations may buffer multiple commands in a command queue before sending them to the GL server for execution. This may happen in places such as the network stack (for network transparent implementations), CPU code executing as part of the GL client or the GL server, or internally to the GPU hardware. Coarse control over command queues is available using the command
+
+ void Flush( void ); 
+ 
+ void Finish( void ); 
+ 
+ forces all previously issued GL commands to complete. Finish does not return until all effects from such commands on GL client and server state and the framebuffer are fully realized.
