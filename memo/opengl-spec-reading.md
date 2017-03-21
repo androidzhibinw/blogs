@@ -51,3 +51,24 @@ structs that are semantically similar to those of the underlying OpenGL ES API.
 
 > The model for interpretation of GL commands is client-server. That is, a program (the client) issues commands, and these commands are interpreted and processed by the GL (the server). The server may or may not operate on the same computer or in the same address space as the client. In this sense, the GL is network transparent. A server may maintain a number of GL contexts, each of which is an encapsulation of current GL state and objects. A client may choose to be made current to any one of these contexts.
 
+   There are two classes of framebuffers: a window system-provided framebuffer associated with a context when the context is made current, and application-created framebuffers. The window system-provided framebuffer is referred to as the default framebuffer. Application created framebuffers, referred to as framebuffer objects, may be created as desired。
+
+ ### Command Syntax 
+ 
+> The Speciﬁcation describes OpenGL commands as functions or procedures using ANSI C syntax. 
+
+    void Uniform4f( int location, float v0, float v1, float v2, float v3 );
+    void GetFloatv( enum pname, float *data );
+    
+| Type Descriptor  | Corresponding GL Type |
+| ------------- | ------------- |
+| b | byte  |
+| s | short  |
+| i | int  |
+| i64 | int64  |
+| f | float  |
+| d | double| 
+| ub | ubyte|
+| us | ushort|
+| ui | uint|
+| ui64 | uint64|
