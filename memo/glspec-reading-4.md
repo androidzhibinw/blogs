@@ -72,3 +72,13 @@ the name of a sync object).
 Sync object names immediately become invalid after calling DeleteSync, as discussed prviously , but the underlying sync object will not be deleted
 until it is no longer associated with any fence command and no longer blocking any *WaitSync command.
 
+### Query Objects and Asynchronous Queries 
+
+Asynchronous queries provide a mechanism to return information about the processing of a sequence of GL commands.
+
+### Time Queries 
+
+Query objects may also be used to track the amount of time needed to fully complete a set of GL commands (a time elapsed query), or to determine the current time of the GL (a timer query).
+
+When BeginQuery and EndQuery are called with a target of TIME_ELAPSED, the GL prepares to start and stop the timer used for time elapsed queries. The timer is started or stopped when the effects from all previous commands on the GL client
+and server state and the framebuffer have been fully realized. The BeginQuery and EndQuery commands may return before the timer is actually started or stopped. When the time elapsed query timer is ﬁnally stopped, the elapsed time (in nanoseconds) is written to the corresponding query object as the query result value, and the query result for that object is marked as available.
