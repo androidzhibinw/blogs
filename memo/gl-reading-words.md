@@ -12,3 +12,11 @@ normals
 texture coordinates
 indeterminate
 conjunction
+vertices 
+tessellation
+geometry
+fence
+preceding
+substantially
+occlusion
+
