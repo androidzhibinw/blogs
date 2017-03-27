@@ -48,5 +48,5 @@ When the contents of an object T are changed, such changes are not always immedi
 #### Determining Completion of Changes to an object 
 
 
-
+Completion of a command may be determined either by calling Finish, or by calling FenceSync and executing a WaitSync command on the associated sync object.
 
